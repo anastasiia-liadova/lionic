@@ -1,0 +1,546 @@
+@media (max-width: 1024px) {
+
+  .join-us-form-input,
+  .join-us-form-select {
+    width: 100%;
+  }
+
+  .article-center {
+    display: none;
+    text-align: center;
+  }
+}
+
+/* Данный запрос говорит о том, что при ширине экрана меньше 1024,
+будет сробатывать он будет иметь подобные значения */
+
+@media (max-width: 992px) {
+
+  .header-nav {
+    position: fixed;
+    padding: 20px;
+    right: 0;
+    top: 80px;
+    margin-right: 0;
+    width: 45%;
+    max-width: 300px;
+    height: calc(100vh - 80px);
+    z-index: 1000;
+    overflow-y: auto;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .header-nav--visible {
+    transform: none;
+  }
+
+
+  .header-btn {
+    margin-right: 7px;
+    padding: 10px 20px;
+  }
+
+  .header-list {
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .header-list-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+
+  .header-link {
+    display: inline-block;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .btn-burger {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: 1px solid currentColor;
+    border-radius: 3px;
+    color: #3172B9;
+    cursor: pointer;
+  }
+
+  .burger__line {
+    position: absolute;
+    /* left: 50%; */
+    /* чтобы выравнить все паалочки по центру относительно кнопки */
+    width: 20px;
+    height: 2px;
+    border-radius: inherit;
+    background-color: currentColor;
+    /* Использовать данное свойство currentColor удобно тем,
+    что при применении эффектов,
+    меняется как рамка,
+    так и линии */
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .burger__line:nth-child(1) {
+    top: 13px;
+  }
+
+  .burger__line:nth-child(3) {
+    bottom: 13px;
+  }
+
+  .burger__line:nth-child(2) {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+
+  .burger--active .burger__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger--active .burger__line:nth-child(1) {
+    bottom: auto;
+    left: 27%;
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  .burger--active .burger__line:nth-child(3) {
+    top: 50%;
+    left: 24%;
+    transform: rotate(-45deg);
+  }
+
+  .stop--scroll {
+    overflow: hidden;
+  }
+
+
+  .hero-content {
+    width: 75%;
+    /* увеличаем текст по ширине */
+  }
+
+  .services__list {
+    flex-wrap: wrap;
+    /* Чтобы карточки разместить с нужным количеством в ряд */
+  }
+
+  .services-item {
+    margin-bottom: 39px;
+    /* при наличии блоков ниже */
+    width: calc((100% - (var(--gap))) / 2);
+  }
+
+  /* берём 100% ширины родителя и указ. что нужны отступы --gap(переменная)
+и делим на количество блоков */
+
+  .services-item:not(:nth-child(4n)) {
+    margin-right: 0;
+  }
+
+  /* убираем данные отступы, так как в ряд идет уже 2 карточки, а  не 4 */
+
+  .services-item:not(:nth-child(2n)) {
+    margin-right: var(--gap);
+  }
+
+  /* а тут уже их добавляем для каждой второй карточки */
+
+  .join-us-form {
+    padding: 0px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    /* теперь лого сверху,
+  а всё остальное меню внизу. Смотрится более гармонично */
+  }
+
+  .clients-item {
+    padding: 20px;
+    /* сделали внутренний отступ чуть меньше,теперь текс читается легче */
+  }
+}
+
+/* Данный запрос говорит о том, что при ширине экрана меньше 992,
+будет сробатывать он будет иметь подобные значения */
+
+
+@media (max-width: 768px) {
+
+  .blog-preview-link {
+    flex-direction: column;
+  }
+
+  .blog-preview {
+    height: 100%;
+  }
+
+  .clients-item:not(:nth-child(3n)) {
+    margin-right: 0px;
+  }
+
+  .clients-list {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .clients-item {
+    margin-bottom: var(--gap);
+    width: calc((100% - (var(--gap))) / 2);
+  }
+
+  .footer-item:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .footer-item {
+    margin-right: 15px;
+  }
+
+  .footer-link {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  :root {
+    --gap: 15px
+  }
+
+  .header {
+    padding: 15px 0;
+  }
+
+  .header-logo {
+    width: 80px;
+  }
+
+  .header-btn {
+    padding: 12px 21px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero {
+    padding-top: 29px;
+    padding-bottom: 0;
+    background-image: none;
+  }
+
+  .hero-title {
+    margin-bottom: 12px;
+  }
+
+  .hero-descr {
+    margin-bottom: 18px;
+  }
+
+  .hero-wrapper {
+    width: 100%;
+  }
+
+  .hero-btn {
+    width: 100%;
+    margin-bottom: 17px;
+  }
+
+  .section-offset {
+    padding: 60px 0;
+  }
+
+  .services-title {
+    margin-bottom: 15px;
+    text-align: left;
+
+  }
+
+  .section-descr {
+    margin-bottom: 36px;
+    line-height: 23px;
+  }
+
+  .services-descr {
+    text-align: left;
+  }
+
+  .services-item-icon {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 15px
+  }
+
+  .services__list {
+    margin-bottom: -40px;
+  }
+
+  .services-item {
+    padding: 15px;
+  }
+
+  .services-item-title {
+    margin-bottom: 3px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  .services-item-decst {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  .articles-title {
+    margin-bottom: 15px;
+  }
+
+  .articles-item:not(:nth-child(2n)) {
+    margin-right: 0;
+  }
+
+  .articles-item {
+    width: 100%;
+  }
+
+  .article-center {
+    padding-top: 20px;
+    display: block;
+  }
+
+  .articles-item:nth-child(-n+2) {
+    display: none;
+  }
+
+  .article-center--hidden {
+    display: none;
+  }
+
+  .articles-item.articles-item--visible {
+    display: block;
+  }
+
+  .blog-preview-link {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .blog-preview-image {
+    flex-shrink: 0;
+    width: 88px;
+    height: 100%;
+  }
+
+  .blog-preview {
+    min-height: 191px;
+  }
+
+  .blog-preview-text {
+    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .blog-preview-time {
+    margin-bottom: 5px;
+  }
+
+  .blog-preview-title {
+    margin-bottom: 3px;
+  }
+
+  .articles-list {
+    margin-bottom: calc(-1 * var(--gap));
+    /* взяли отступ в виде 15px, умнижили на -1 и получили -15px.
+  как раз, чтобы невилировать нижний отступ */
+  }
+
+  .clients-item {
+    width: 100%;
+    margin-bottom: 11px;
+  }
+
+  .clients-title {
+    margin-bottom: 15px;
+  }
+
+  .clients-item-descr {
+    margin-bottom: 31px;
+  }
+
+  .clients-list {
+    margin-bottom: -13px;
+  }
+
+  .contacts-title {
+    margin-bottom: 18px;
+  }
+
+  .contacts-list {
+    flex-wrap: wrap;
+  }
+
+  .contacts-item:not(:nth-child(3n)) {
+    margin-right: 0;
+  }
+
+  .contacts-item {
+    width: 100%;
+    padding-top: 37px;
+    margin-bottom: 31px;
+  }
+
+  .contacts-item-caption {
+    margin-bottom: 10px;
+  }
+
+  .contacts-list {
+    margin-bottom: -30px;
+  }
+
+
+  .join-us-title {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .join-us-descr {
+    text-align: left;
+    margin-bottom: 12px;
+    letter-spacing: 0.1px;
+  }
+
+  .join-us-form-top {
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  .join-us-form-right,
+  .join-us-form-left {
+    width: 100%;
+  }
+
+  .join-us-form-input {
+    margin-bottom: 14px;
+    padding: 14px 18px;
+  }
+
+  .join-us-form-select {
+    padding-left: 14px;
+  }
+
+  .join-us-form-left {
+    margin-bottom: 15px;
+  }
+
+  .join-us-form-bottom {
+    justify-content: center;
+  }
+
+  .join-us-form-right-textarea {
+    min-height: 240px;
+    padding: 18px 18px;
+  }
+
+  .join-us-form-wrapper {
+    width: 100%;
+    /* Растягиваем изначально родителя,
+  чтобы можно потом растянуть саму кнопку */
+  }
+
+  .join-us-btn {
+    width: 100%;
+    padding-bottom: 22px;
+    margin-bottom: 17px;
+  }
+
+  .footer-container {
+    flex-direction: column-reverse;
+    /* перевернули меню  */
+  }
+
+  .footer {
+    padding: 30px 0;
+  }
+
+  .footer-left {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  .footer-nav .footer-list {
+    flex-wrap: wrap;
+  }
+
+  .footer-nav .footer-link {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .footer-right {
+    flex-wrap: wrap;
+    margin-bottom: -17px;
+  }
+
+  .footer-nav {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .footer-item:not(:last-child) {
+    margin-right: 31px;
+    margin-bottom: 14px;
+  }
+
+  .footer-list {
+    margin: 0;
+    margin-bottom: 14px;
+  }
+
+  .social {
+    margin-left: -6px;
+  }
+
+  .footer-logo {
+    width: 80px;
+    margin: 0;
+    margin-right: 209px;
+    margin-bottom: -17px;
+    padding: 43px 0;
+  }
+
+  .footer-copy {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 16px 0;
+    margin-left: -13px;
+    text-align: center;
+  }
+
+  .footer-copy::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 30px);
+    top: 0;
+    height: 1px;
+    left: -15px;
+    background-color: #c4c4c4;
+
+  }
+
+
+}
